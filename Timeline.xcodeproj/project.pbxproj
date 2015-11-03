@@ -19,6 +19,7 @@
 		2435A03B1BE96B8200A64963 /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */; };
 		2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */; };
 		2435A03F1BE96E6B00A64963 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */; };
+		2435A0411BE96F0F00A64963 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0401BE96F0F00A64963 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewController.swift; sourceTree = "<group>"; };
 		2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
 		2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		2435A0401BE96F0F00A64963 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				2410E3321BE95EFD00EF9868 /* ViewController.swift */,
 				2410E3341BE95EFD00EF9868 /* Main.storyboard */,
 				2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */,
+				2435A0401BE96F0F00A64963 /* User.swift */,
 				2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */,
 				2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */,
 				2435A0381BE96A0100A64963 /* ProfileViewController.swift */,
@@ -164,6 +167,7 @@
 				2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */,
 				2410E3451BE965D900EF9868 /* PostDetailTableViewController.swift in Sources */,
 				2410E3311BE95EFD00EF9868 /* AppDelegate.swift in Sources */,
+				2435A0411BE96F0F00A64963 /* User.swift in Sources */,
 				2435A03B1BE96B8200A64963 /* AddPhotoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
