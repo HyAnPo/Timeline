@@ -12,6 +12,13 @@
 		2410E3361BE95EFD00EF9868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2410E3341BE95EFD00EF9868 /* Main.storyboard */; };
 		2410E3381BE95EFD00EF9868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2410E3371BE95EFD00EF9868 /* Assets.xcassets */; };
 		2410E33B1BE95EFD00EF9868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */; };
+		2410E3431BE9647B00EF9868 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410E3421BE9647B00EF9868 /* TimelineTableViewController.swift */; };
+		2410E3451BE965D900EF9868 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410E3441BE965D900EF9868 /* PostDetailTableViewController.swift */; };
+		2435A0371BE9685A00A64963 /* UserSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0361BE9685A00A64963 /* UserSearchTableViewController.swift */; };
+		2435A0391BE96A0100A64963 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0381BE96A0100A64963 /* ProfileViewController.swift */; };
+		2435A03B1BE96B8200A64963 /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */; };
+		2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */; };
+		2435A03F1BE96E6B00A64963 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		2410E3371BE95EFD00EF9868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2410E33A1BE95EFD00EF9868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2410E33C1BE95EFD00EF9868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2410E3421BE9647B00EF9868 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		2410E3441BE965D900EF9868 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
+		2435A0361BE9685A00A64963 /* UserSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewController.swift; sourceTree = "<group>"; };
+		2435A0381BE96A0100A64963 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewController.swift; sourceTree = "<group>"; };
+		2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
+		2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,13 @@
 				2410E3301BE95EFD00EF9868 /* AppDelegate.swift */,
 				2410E3321BE95EFD00EF9868 /* ViewController.swift */,
 				2410E3341BE95EFD00EF9868 /* Main.storyboard */,
+				2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */,
+				2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */,
+				2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */,
+				2435A0381BE96A0100A64963 /* ProfileViewController.swift */,
+				2435A0361BE9685A00A64963 /* UserSearchTableViewController.swift */,
+				2410E3441BE965D900EF9868 /* PostDetailTableViewController.swift */,
+				2410E3421BE9647B00EF9868 /* TimelineTableViewController.swift */,
 				2410E3371BE95EFD00EF9868 /* Assets.xcassets */,
 				2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */,
 				2410E33C1BE95EFD00EF9868 /* Info.plist */,
@@ -135,8 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2435A0391BE96A0100A64963 /* ProfileViewController.swift in Sources */,
+				2435A0371BE9685A00A64963 /* UserSearchTableViewController.swift in Sources */,
 				2410E3331BE95EFD00EF9868 /* ViewController.swift in Sources */,
+				2410E3431BE9647B00EF9868 /* TimelineTableViewController.swift in Sources */,
+				2435A03F1BE96E6B00A64963 /* LoginSignupViewController.swift in Sources */,
+				2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */,
+				2410E3451BE965D900EF9868 /* PostDetailTableViewController.swift in Sources */,
 				2410E3311BE95EFD00EF9868 /* AppDelegate.swift in Sources */,
+				2435A03B1BE96B8200A64963 /* AddPhotoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +312,7 @@
 				2410E3411BE95EFD00EF9868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
