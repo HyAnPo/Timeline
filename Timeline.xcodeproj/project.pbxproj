@@ -20,6 +20,10 @@
 		2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */; };
 		2435A03F1BE96E6B00A64963 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */; };
 		2435A0411BE96F0F00A64963 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0401BE96F0F00A64963 /* User.swift */; };
+		2435A0431BE9766A00A64963 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0421BE9766A00A64963 /* Post.swift */; };
+		2435A0451BE97B6B00A64963 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0441BE97B6B00A64963 /* Comment.swift */; };
+		2435A0471BE97CCB00A64963 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0461BE97CCB00A64963 /* Like.swift */; };
+		2435A0491BE9835000A64963 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0481BE9835000A64963 /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
 		2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		2435A0401BE96F0F00A64963 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2435A0421BE9766A00A64963 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2435A0441BE97B6B00A64963 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		2435A0461BE97CCB00A64963 /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		2435A0481BE9835000A64963 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 				2410E3341BE95EFD00EF9868 /* Main.storyboard */,
 				2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */,
 				2435A0401BE96F0F00A64963 /* User.swift */,
+				2435A0421BE9766A00A64963 /* Post.swift */,
+				2435A0481BE9835000A64963 /* UserController.swift */,
+				2435A0441BE97B6B00A64963 /* Comment.swift */,
+				2435A0461BE97CCB00A64963 /* Like.swift */,
 				2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */,
 				2435A03A1BE96B8200A64963 /* AddPhotoTableViewController.swift */,
 				2435A0381BE96A0100A64963 /* ProfileViewController.swift */,
@@ -160,11 +172,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2435A0391BE96A0100A64963 /* ProfileViewController.swift in Sources */,
+				2435A0431BE9766A00A64963 /* Post.swift in Sources */,
 				2435A0371BE9685A00A64963 /* UserSearchTableViewController.swift in Sources */,
 				2410E3331BE95EFD00EF9868 /* ViewController.swift in Sources */,
+				2435A0491BE9835000A64963 /* UserController.swift in Sources */,
+				2435A0471BE97CCB00A64963 /* Like.swift in Sources */,
 				2410E3431BE9647B00EF9868 /* TimelineTableViewController.swift in Sources */,
 				2435A03F1BE96E6B00A64963 /* LoginSignupViewController.swift in Sources */,
 				2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */,
+				2435A0451BE97B6B00A64963 /* Comment.swift in Sources */,
 				2410E3451BE965D900EF9868 /* PostDetailTableViewController.swift in Sources */,
 				2410E3311BE95EFD00EF9868 /* AppDelegate.swift in Sources */,
 				2435A0411BE96F0F00A64963 /* User.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Like.swift
 //  Timeline
 //
 //  Created by Andrew Porter on 11/3/15.
@@ -8,22 +8,21 @@
 
 import Foundation
 
-struct User: Equatable {
+struct Like: Equatable {
+    
     let userName: String
-    let bio: String?
-    let url: String?
+    let postIdentifier: String
     let identifier: String?
     
-    init(userName: String, bio: String? = nil, url: String? = nil, identifier: String) {
+    init(userName: String, postIdentifier: String, identifier: String? = nil) {
         
         self.userName = userName
-        self.bio = bio
-        self.url = url
+        self.postIdentifier = postIdentifier
         self.identifier = identifier
-        
     }
 }
 
-func ==(lhs: User, rhs: User) -> Bool {
+func == (lhs: Like, rhs: Like) -> Bool {
+    
     return (lhs.userName == rhs.userName) && (lhs.identifier == rhs.identifier)
 }
