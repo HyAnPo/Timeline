@@ -84,8 +84,8 @@
 			children = (
 				2410E3301BE95EFD00EF9868 /* AppDelegate.swift */,
 				2410E3341BE95EFD00EF9868 /* Main.storyboard */,
-				2466700D1BEAB50300249890 /* ViewControllers */,
 				2466700E1BEAB51800249890 /* Models */,
+				2466700D1BEAB50300249890 /* ViewControllers */,
 				2466700F1BEAB53200249890 /* Controllers */,
 				2410E3371BE95EFD00EF9868 /* Assets.xcassets */,
 				2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */,
@@ -162,6 +162,7 @@
 				TargetAttributes = {
 					2410E32C1BE95EFD00EF9868 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 9YLTPA768Z;
 					};
 				};
 			};
@@ -327,10 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevMtn.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -338,10 +342,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevMtn.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

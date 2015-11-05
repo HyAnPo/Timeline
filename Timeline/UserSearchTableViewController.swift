@@ -9,7 +9,11 @@
 import UIKit
 
 class UserSearchTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    
+    var usersDataSource: [User] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -22,15 +22,16 @@ class LoginSignupViewController: UIViewController {
         
     }
     
-    let viewMode = ViewMode.Signup
+    var viewMode = ViewMode.Signup
     
+    //MARK: Bug
     func updateViewBasedOnMode() {
         switch viewMode {
         case .Login:
-            usernameTextField.hidden = true
-            bioTextField.hidden = true
-            urlTextField.hidden = true
-            
+            usernameTextField.removeFromSuperview()
+            bioTextField.removeFromSuperview()
+            urlTextField.removeFromSuperview()
+           
             actionButton.setTitle("Login", forState: .Normal)
         case .Signup:
             actionButton.setTitle("Sign Up", forState: .Normal)

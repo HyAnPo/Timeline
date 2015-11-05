@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="E7R-GN-fN1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HET-AZ-NjN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -90,7 +90,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rvx-zJ-7mh">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rvx-zJ-7mh" id="tsF-UJ-Ptp">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -121,10 +121,13 @@
                             </segments>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="eiU-2h-1WB" id="oa4-uX-MPz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kE3-E5-Tly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="1354"/>
+            <point key="canvasLocation" x="976" y="1378"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="k9I-3H-8Oc">
@@ -144,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjY-fC-c2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="2075"/>
+            <point key="canvasLocation" x="1387" y="2115"/>
         </scene>
         <!--Post Detail Table View Controller-->
         <scene sceneID="qDT-Cf-EQh">
@@ -249,6 +252,9 @@
                                         <rect key="frame" x="0.0" y="251" width="560" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Action"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="iAA-6J-eOx" eventType="touchUpInside" id="tSQ-k4-yjc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -304,7 +310,7 @@
                                             <constraint firstAttribute="height" constant="75" id="uqV-Dg-2FC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="77"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -316,7 +322,7 @@
                                         <rect key="frame" x="0.0" y="150" width="560" height="81"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0E-u5-SMN">
@@ -330,7 +336,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
-                                                    <segue destination="iAA-6J-eOx" kind="show" id="YgS-mE-nfS"/>
+                                                    <segue destination="iAA-6J-eOx" kind="show" identifier="toLogin" id="YgS-mE-nfS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLw-jC-9nd">
@@ -341,7 +347,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Sign Up"/>
                                                 <connections>
-                                                    <segue destination="iAA-6J-eOx" kind="show" id="FrE-Cc-B9E"/>
+                                                    <segue destination="iAA-6J-eOx" kind="show" identifier="toSignup" id="FrE-Cc-B9E"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -407,7 +413,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFO-wo-LiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="1354"/>
+            <point key="canvasLocation" x="285" y="1378"/>
         </scene>
         <!--Profile-->
         <scene sceneID="lEW-Mu-Dgt">
@@ -471,8 +477,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="YgS-mE-nfS"/>
         <segue reference="gez-2b-PNm"/>
-        <segue reference="D7R-mA-awa"/>
-        <segue reference="y48-GB-mrT"/>
         <segue reference="gXO-QJ-shg"/>
+        <segue reference="ec7-FM-hrN"/>
+        <segue reference="y48-GB-mrT"/>
     </inferredMetricsTieBreakers>
 </document>
