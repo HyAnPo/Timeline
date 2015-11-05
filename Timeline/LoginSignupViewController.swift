@@ -9,27 +9,114 @@
 import UIKit
 
 class LoginSignupViewController: UIViewController {
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var bioTextField: UITextField!
+    @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var actionButton: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    enum ViewMode {
+        case Login
+        case Signup
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    let viewMode = ViewMode.Signup
+    
+    func updateViewBasedOnMode() {
+        switch viewMode {
+        case .Login:
+            usernameTextField.hidden = true
+            bioTextField.hidden = true
+            urlTextField.hidden = true
+            
+            actionButton.setTitle("Login", forState: .Normal)
+        case .Signup:
+            actionButton.setTitle("Sign Up", forState: .Normal)
+            
+        }
     }
-    */
+    
+    var fieldsAreValid: Bool {
+        get {
+            switch viewMode {
+            case .Login:
+                return !(usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
+            case .Signup:
+                return !(emailTextField.text!.isEmpty || usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
+                
+            }
+            
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateViewBasedOnMode()
 
+    }
+
+    @IBAction func actionButtonTapped(sender: UIButton) {
+        
+        if fieldsAreValid {
+            switch viewMode {
+            case .Login:
+                UserController.authenticateUser(emailTextField.text!, password: passwordTextField.text! , completion: { (success, user) -> Void in
+                    if success, let _ = user {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        self.presentValidationAlertWithTitle("Unable To Login", message: "Please check your information and try again.")
+                    }
+                })
+            case .Signup:
+                UserController.createUser(emailTextField.text!, userName: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
+                    if success, let _ = user {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        self.presentValidationAlertWithTitle("Unable to Signup", message: "Check your information and try again.")
+                    }
+                })
+            }
+        }
+    }
+    
+    func presentValidationAlertWithTitle(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

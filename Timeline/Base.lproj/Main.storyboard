@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Timeline Table View Controller-->
@@ -19,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7GM-Am-cW4" id="M7T-Fu-3My">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -60,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TsL-Ba-sYX" id="fFY-dx-L6d">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -92,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rvx-zJ-7mh" id="tsF-UJ-Ptp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -159,7 +160,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXv-Sf-zC9" id="9Z3-Cu-i14">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -196,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="1788" y="626"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Signup View Controller-->
         <scene sceneID="NJ1-5u-JRA">
             <objects>
-                <viewController id="iAA-6J-eOx" sceneMemberID="viewController">
+                <viewController id="iAA-6J-eOx" customClass="LoginSignupViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y0U-wt-rV3"/>
                         <viewControllerLayoutGuide type="bottom" id="Z5Q-b0-xu3"/>
@@ -207,9 +208,74 @@
                     <view key="view" contentMode="scaleToFill" id="yIi-J5-X3b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oT3-Mo-98j">
+                                <rect key="frame" x="20" y="64" width="560" height="281"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlf-1g-Vnw">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lmq-kP-fA9">
+                                        <rect key="frame" x="0.0" y="44" width="560" height="44"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-Hf-BTK">
+                                        <rect key="frame" x="0.0" y="88" width="560" height="44"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPJ-2W-Pdg">
+                                        <rect key="frame" x="0.0" y="132" width="560" height="75"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="waa-Lr-K6T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Web URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wc2-sO-ABx">
+                                        <rect key="frame" x="0.0" y="207" width="560" height="44"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4o-ri-EJV">
+                                        <rect key="frame" x="0.0" y="251" width="560" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Action"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="wc2-sO-ABx" firstAttribute="height" secondItem="eDD-Hf-BTK" secondAttribute="height" id="Qak-Eh-qKY"/>
+                                    <constraint firstItem="lmq-kP-fA9" firstAttribute="height" secondItem="eDD-Hf-BTK" secondAttribute="height" id="df0-4F-b88"/>
+                                    <constraint firstItem="vlf-1g-Vnw" firstAttribute="height" secondItem="lmq-kP-fA9" secondAttribute="height" id="ppW-Gu-hwm"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z5Q-b0-xu3" firstAttribute="top" secondItem="oT3-Mo-98j" secondAttribute="bottom" priority="750" constant="255" id="1KB-yf-rZL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oT3-Mo-98j" secondAttribute="leading" id="dxl-xO-bmm"/>
+                            <constraint firstItem="oT3-Mo-98j" firstAttribute="top" secondItem="Y0U-wt-rV3" secondAttribute="bottom" constant="44" id="gUW-f3-Sod"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oT3-Mo-98j" secondAttribute="trailing" id="thN-LD-9Qr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="actionButton" destination="O4o-ri-EJV" id="keG-cT-WNB"/>
+                        <outlet property="bioTextField" destination="rPJ-2W-Pdg" id="Y2F-sL-PzS"/>
+                        <outlet property="emailTextField" destination="lmq-kP-fA9" id="oXF-1d-Mic"/>
+                        <outlet property="passwordTextField" destination="eDD-Hf-BTK" id="U85-D2-dzY"/>
+                        <outlet property="urlTextField" destination="wc2-sO-ABx" id="HjM-50-kFx"/>
+                        <outlet property="usernameTextField" destination="vlf-1g-Vnw" id="oO1-sB-Oc6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvr-62-Poa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,25 +293,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-sB-vap">
-                                <rect key="frame" x="281" y="447" width="38" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Zx-Lp-VTk">
+                                <rect key="frame" x="20" y="64" width="560" height="281"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCb-pf-2ow">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="150"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="qME-Rn-zZA"/>
+                                            <constraint firstAttribute="height" constant="75" id="uqV-Dg-2FC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="77"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uqV-Dg-2FC"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Social photo sharing timeline." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kof-Rc-ma6">
+                                        <rect key="frame" x="0.0" y="150" width="560" height="81"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0E-u5-SMN">
+                                        <rect key="frame" x="0.0" y="231" width="560" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkT-CX-zzD">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="VNb-T7-9WR"/>
+                                                </constraints>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <segue destination="iAA-6J-eOx" kind="show" id="YgS-mE-nfS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLw-jC-9nd">
+                                                <rect key="frame" x="280" y="0.0" width="280" height="50"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CYg-sC-WWl"/>
+                                                </constraints>
+                                                <state key="normal" title="Sign Up"/>
+                                                <connections>
+                                                    <segue destination="iAA-6J-eOx" kind="show" id="FrE-Cc-B9E"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="mkT-CX-zzD" firstAttribute="width" secondItem="kLw-jC-9nd" secondAttribute="width" id="bMV-ZH-ByC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="iAA-6J-eOx" kind="show" id="2I8-pv-N2X"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcT-A5-s5k">
-                                <rect key="frame" x="273" y="499" width="55" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Sign UP"/>
-                                <connections>
-                                    <segue destination="iAA-6J-eOx" kind="show" id="dqb-7W-d9h"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Zx-Lp-VTk" secondAttribute="trailing" id="NMb-0n-bEQ"/>
+                            <constraint firstItem="1Zx-Lp-VTk" firstAttribute="top" secondItem="pgp-MK-XCY" secondAttribute="bottom" constant="44" id="Zz7-cR-RkA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1Zx-Lp-VTk" secondAttribute="leading" id="gOC-a5-79j"/>
+                            <constraint firstItem="0q4-v3-weJ" firstAttribute="top" secondItem="1Zx-Lp-VTk" secondAttribute="bottom" priority="750" constant="255" id="hIo-q6-RI7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="otE-Cd-23Y"/>
                 </viewController>
@@ -267,7 +383,7 @@
                         <segue destination="zxD-jq-CmS" kind="relationship" relationship="viewControllers" id="THU-eL-hXa"/>
                         <segue destination="yVg-nQ-7Am" kind="relationship" relationship="viewControllers" id="D7R-mA-awa"/>
                         <segue destination="gIT-Eh-7BM" kind="relationship" relationship="viewControllers" id="2hI-8e-snR"/>
-                        <segue destination="eVW-xw-QMo" kind="presentation" id="gez-2b-PNm"/>
+                        <segue destination="eVW-xw-QMo" kind="presentation" identifier="noCurrentUserSegue" id="gez-2b-PNm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAA-Vy-UCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,10 +469,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gXO-QJ-shg"/>
+        <segue reference="YgS-mE-nfS"/>
         <segue reference="gez-2b-PNm"/>
         <segue reference="D7R-mA-awa"/>
-        <segue reference="dqb-7W-d9h"/>
         <segue reference="y48-GB-mrT"/>
+        <segue reference="gXO-QJ-shg"/>
     </inferredMetricsTieBreakers>
 </document>
