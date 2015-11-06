@@ -10,19 +10,65 @@ import UIKit
 
 class UserSearchTableViewController: UITableViewController {
     
-    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     
+    
+    
+    
+    enum ViewMode: Int {
+        case Friends = 0
+        case All = 1
+        
+        func users(completion: (users: [User]?) -> Void) {
+            
+            switch self {
+            case .Friends:
+                UserController.followedByUser(UserController.sharedController.currentUser, completion: { (users) -> Void in
+                    completion(users: users)
+                })
+                
+            case .All:
+                UserController.fetchAllUsers({ (users) -> Void in
+                    completion(users: users)
+                })
+            }
+        }
+    }
+    
+    
+    // MARK: - Properties
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     var usersDataSource: [User] = []
+    var mode: ViewMode {
+        get {
+            return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+        }
+    }
+    
+    
+    // MARK: - View Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        updateViewBasedOnMode()
     }
+    
+    func updateViewBasedOnMode() {
+        mode.users() { (users) -> Void in
+            if let users = users {
+                self.usersDataSource = users
+            } else {
+                self.usersDataSource = []
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func selectedIndexChanged(sender: UISegmentedControl) {
+        updateViewBasedOnMode()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -32,24 +78,26 @@ class UserSearchTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return usersDataSource.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("usernameCell", forIndexPath: indexPath)
+        
+        let user = usersDataSource[indexPath.row]
+        
+        cell.textLabel?.text = user.username
+        
 
-        // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

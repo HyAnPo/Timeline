@@ -9,14 +9,14 @@
 import Foundation
 
 struct User: Equatable {
-    let userName: String
+    let username: String
     let bio: String?
     let url: String?
     let identifier: String?
     
     init(userName: String, bio: String? = nil, url: String? = nil, identifier: String) {
         
-        self.userName = userName
+        self.username = userName
         self.bio = bio
         self.url = url
         self.identifier = identifier
@@ -25,5 +25,5 @@ struct User: Equatable {
 }
 
 func ==(lhs: User, rhs: User) -> Bool {
-    return (lhs.userName == rhs.userName) && (lhs.identifier == rhs.identifier)
+    return (lhs.username == rhs.username) && (lhs.identifier == rhs.identifier)
 }

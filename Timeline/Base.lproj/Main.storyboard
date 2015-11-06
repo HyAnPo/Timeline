@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7GM-Am-cW4" id="M7T-Fu-3My">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TsL-Ba-sYX" id="fFY-dx-L6d">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -89,11 +89,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rvx-zJ-7mh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usernameCell" id="Rvx-zJ-7mh">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rvx-zJ-7mh" id="tsF-UJ-Ptp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -119,6 +119,9 @@
                                 <segment title="Friends"/>
                                 <segment title="Add Friend"/>
                             </segments>
+                            <connections>
+                                <action selector="selectedIndexChanged:" destination="yVg-nQ-7Am" eventType="valueChanged" id="I6r-kS-PRE"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -163,7 +166,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXv-Sf-zC9" id="9Z3-Cu-i14">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -386,20 +389,21 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zxD-jq-CmS" kind="relationship" relationship="viewControllers" id="THU-eL-hXa"/>
-                        <segue destination="yVg-nQ-7Am" kind="relationship" relationship="viewControllers" id="D7R-mA-awa"/>
-                        <segue destination="gIT-Eh-7BM" kind="relationship" relationship="viewControllers" id="2hI-8e-snR"/>
                         <segue destination="eVW-xw-QMo" kind="presentation" identifier="noCurrentUserSegue" id="gez-2b-PNm"/>
+                        <segue destination="gIT-Eh-7BM" kind="relationship" relationship="viewControllers" id="2hI-8e-snR"/>
+                        <segue destination="zxD-jq-CmS" kind="relationship" relationship="viewControllers" id="THU-eL-hXa"/>
+                        <segue destination="PhP-Lx-tBr" kind="relationship" relationship="viewControllers" id="9iJ-7m-vzn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAA-Vy-UCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976" y="626"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="0Z3-Vl-yeA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PhP-Lx-tBr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" id="iLh-eu-WyM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nL5-qo-scj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -475,10 +479,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YgS-mE-nfS"/>
         <segue reference="gez-2b-PNm"/>
+        <segue reference="YgS-mE-nfS"/>
         <segue reference="gXO-QJ-shg"/>
-        <segue reference="ec7-FM-hrN"/>
         <segue reference="y48-GB-mrT"/>
     </inferredMetricsTieBreakers>
 </document>
