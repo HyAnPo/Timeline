@@ -121,23 +121,23 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let sender = sender as! UITableViewCell
-        
-        var selectedUser: User
-        
-        if let indexPath = (searchController.searchResultsController as? UserSearchTableViewController)?.tableView.indexPathForCell(sender) {
-            let usersDataSource = (searchController.searchResultsController as! UserSearchTableViewController).usersDataSource
+        if segue.identifier == "toProfileView" {
+            guard let cell = sender as? UITableViewCell else { return }
             
-            selectedUser = usersDataSource[indexPath.row]
-        } else {
-            
-            let indexPath = tableView.indexPathForCell(sender)!
-            selectedUser = self.usersDataSource[indexPath.row]
+            if let indexPath = tableView.indexPathForCell(cell) {
+                let user = usersDataSource[indexPath.row]
+                
+                let destinationViewController = segue.destinationViewController as? ProfileViewController
+                destinationViewController?.user = user
+                
+            } else if let indexPath = (searchController.searchResultsController as! UserSearchResultsTableViewController).tableView.indexPathForCell(cell) {
+                
+                let user = (searchController.searchResultsController as! UserSearchResultsTableViewController).usersResultsDataSource[indexPath.row]
+                
+                let destinationViewController = segue.destinationViewController as? ProfileViewController
+                destinationViewController?.user = user
+            }
         }
-        
-        let destinationViewController = segue.destinationViewController as! ProfileViewController
-        
-        destinationViewController.user = selectedUser
     }
 
 

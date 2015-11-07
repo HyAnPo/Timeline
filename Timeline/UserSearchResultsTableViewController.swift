@@ -42,12 +42,12 @@ class UserSearchResultsTableViewController: UITableViewController {
     
     //MARK: - Table View Delegate
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        let sender = tableView.cellForRowAtIndexPath(indexPath)
-//        
-//        self.presentingViewController?.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let sender = tableView.cellForRowAtIndexPath(indexPath)
+        
+        self.presentingViewController?.performSegueWithIdentifier("toProfileView", sender: sender)
+    }
 }
 
 

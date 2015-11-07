@@ -99,7 +99,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="PRi-2q-g7V" kind="show" id="y48-GB-mrT"/>
+                                    <segue destination="PRi-2q-g7V" kind="show" identifier="toProfileView" id="y48-GB-mrT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -421,8 +421,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="eVW-xw-QMo" kind="presentation" identifier="noCurrentUserSegue" id="gez-2b-PNm"/>
-                        <segue destination="zxD-jq-CmS" kind="relationship" relationship="viewControllers" id="THU-eL-hXa"/>
                         <segue destination="gIT-Eh-7BM" kind="relationship" relationship="viewControllers" id="2hI-8e-snR"/>
+                        <segue destination="zxD-jq-CmS" kind="relationship" relationship="viewControllers" id="THU-eL-hXa"/>
                         <segue destination="PhP-Lx-tBr" kind="relationship" relationship="viewControllers" id="9iJ-7m-vzn"/>
                     </connections>
                 </tabBarController>
