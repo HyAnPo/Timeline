@@ -26,6 +26,7 @@
 		2435A0491BE9835000A64963 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0481BE9835000A64963 /* UserController.swift */; };
 		2466700B1BEAB4DB00249890 /* PostController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246670091BEAB4DB00249890 /* PostController copy.swift */; };
 		2466700C1BEAB4DB00249890 /* ImageController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466700A1BEAB4DB00249890 /* ImageController copy.swift */; };
+		248D07611BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2435A0481BE9835000A64963 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		246670091BEAB4DB00249890 /* PostController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PostController copy.swift"; sourceTree = "<group>"; };
 		2466700A1BEAB4DB00249890 /* ImageController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageController copy.swift"; sourceTree = "<group>"; };
+		248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		2466700D1BEAB50300249890 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */,
 				2410E3321BE95EFD00EF9868 /* ViewController.swift */,
 				2435A0381BE96A0100A64963 /* ProfileViewController.swift */,
 				2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */,
@@ -212,6 +215,7 @@
 				2466700C1BEAB4DB00249890 /* ImageController copy.swift in Sources */,
 				2410E3431BE9647B00EF9868 /* TimelineTableViewController.swift in Sources */,
 				2435A03F1BE96E6B00A64963 /* LoginSignupViewController.swift in Sources */,
+				248D07611BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift in Sources */,
 				2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */,
 				2435A0451BE97B6B00A64963 /* Comment.swift in Sources */,
 				2410E3451BE965D900EF9868 /* PostDetailTableViewController.swift in Sources */,

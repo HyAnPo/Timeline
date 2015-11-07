@@ -8,15 +8,11 @@
 
 import UIKit
 
-class UserSearchTableViewController: UITableViewController {
-    
-    
-    
-    
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     enum ViewMode: Int {
-        case Friends = 0
-        case All = 1
+        case Friends
+        case All
         
         func users(completion: (users: [User]?) -> Void) {
             
@@ -36,12 +32,14 @@ class UserSearchTableViewController: UITableViewController {
     
     
     // MARK: - Properties
-    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    
     var usersDataSource: [User] = []
+    var searchController: UISearchController!
+    
+    
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
     var mode: ViewMode {
-        get {
             return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
-        }
     }
     
     
@@ -51,10 +49,11 @@ class UserSearchTableViewController: UITableViewController {
         super.viewDidLoad()
         
         updateViewBasedOnMode()
+        setUpSearchController()
     }
     
     func updateViewBasedOnMode() {
-        mode.users() { (users) -> Void in
+        self.mode.users() { (users) -> Void in
             if let users = users {
                 self.usersDataSource = users
             } else {
@@ -65,15 +64,36 @@ class UserSearchTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Search Controller
+    
+    func setUpSearchController() {
+        
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserSearchTableViewController")
+        
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+        
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        let searchTerm = searchController.searchBar.text!.lowercaseString
+        
+        let resultsViewController = searchController.searchResultsController as! UserSearchTableViewController
+        
+        resultsViewController.usersDataSource = self.usersDataSource.filter({$0.username.lowercaseString.containsString(searchTerm)})
+        resultsViewController.tableView.reloadData()
+    }
+    
+    
     @IBAction func selectedIndexChanged(sender: UISegmentedControl) {
         updateViewBasedOnMode()
     }
     
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
@@ -97,51 +117,30 @@ class UserSearchTableViewController: UITableViewController {
 
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let sender = sender as! UITableViewCell
+        
+        var selectedUser: User
+        
+        if let indexPath = (searchController.searchResultsController as? UserSearchTableViewController)?.tableView.indexPathForCell(sender) {
+            let usersDataSource = (searchController.searchResultsController as! UserSearchTableViewController).usersDataSource
+            
+            selectedUser = usersDataSource[indexPath.row]
+        } else {
+            
+            let indexPath = tableView.indexPathForCell(sender)!
+            selectedUser = self.usersDataSource[indexPath.row]
+        }
+        
+        let destinationViewController = segue.destinationViewController as! ProfileViewController
+        
+        destinationViewController.user = selectedUser
     }
-    */
+
+
+   
 
 }
