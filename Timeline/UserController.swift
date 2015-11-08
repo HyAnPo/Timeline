@@ -26,6 +26,10 @@ class UserController {
         
     }
     
+    static func unfollowUser(user: User, completion: (success: Bool) -> Void) {
+        
+    }
+    
     static func userFollowsUser(user: User, userCheck: User, completion: (follows: Bool) -> Void) {
         
     }

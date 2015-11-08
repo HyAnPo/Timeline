@@ -212,7 +212,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileHeader" id="Heo-VY-lhb" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerView" id="Heo-VY-lhb" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="64" width="600" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -280,6 +280,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kKE-qu-vLA"/>
+                    <connections>
+                        <outlet property="collectionView" destination="REM-c0-URe" id="ilZ-A1-odC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjY-fC-c2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
