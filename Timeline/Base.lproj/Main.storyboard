@@ -174,8 +174,95 @@
                     <view key="view" contentMode="scaleToFill" id="BbX-YJ-kXS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="REM-c0-URe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ulV-ch-Lph">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="112"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N9Y-ty-bpT">
+                                        <rect key="frame" x="0.0" y="176" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileHeader" id="Heo-VY-lhb" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="112"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="19G-gg-KCX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMo-xN-D3z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Follow"/>
+                                                    <connections>
+                                                        <action selector="followActionButtonTapped:" destination="Heo-VY-lhb" eventType="touchUpInside" id="isM-6R-nBD"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx6-QO-EQR">
+                                                    <rect key="frame" x="0.0" y="30" width="600" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Website"/>
+                                                    <connections>
+                                                        <action selector="urlButtonTapped:" destination="Heo-VY-lhb" eventType="touchUpInside" id="QyE-be-G1T"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your Bio here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lec-dV-3ll">
+                                                    <rect key="frame" x="0.0" y="60" width="600" height="52"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="52" id="vFk-GU-Oe2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="dx6-QO-EQR" firstAttribute="height" secondItem="EMo-xN-D3z" secondAttribute="height" id="HJW-cE-IeM"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="19G-gg-KCX" firstAttribute="leading" secondItem="Heo-VY-lhb" secondAttribute="leadingMargin" constant="-8" id="9cL-8G-4uZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="19G-gg-KCX" secondAttribute="trailing" constant="-8" id="OuS-Z4-xD1"/>
+                                        <constraint firstItem="19G-gg-KCX" firstAttribute="top" secondItem="Heo-VY-lhb" secondAttribute="topMargin" constant="-8" id="XDE-O7-ywT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="19G-gg-KCX" secondAttribute="bottom" constant="-8" id="wE9-gP-HOX"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="lec-dV-3ll" id="3GP-xB-a7f"/>
+                                        <outlet property="followUserButton" destination="EMo-xN-D3z" id="zpU-T1-Mao"/>
+                                        <outlet property="urlButton" destination="dx6-QO-EQR" id="aBa-Bd-Eca"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="PRi-2q-g7V" id="Y6x-Vi-VrM"/>
+                                    <outlet property="delegate" destination="PRi-2q-g7V" id="q7n-y3-uUn"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="REM-c0-URe" firstAttribute="top" secondItem="6tJ-zh-fXS" secondAttribute="bottom" constant="-64" id="WVC-I7-Q8L"/>
+                            <constraint firstItem="RIK-sp-jGL" firstAttribute="top" secondItem="REM-c0-URe" secondAttribute="bottom" constant="-49" id="bB4-4H-rQ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="REM-c0-URe" secondAttribute="trailing" constant="-20" id="s7T-7l-xOn"/>
+                            <constraint firstItem="REM-c0-URe" firstAttribute="leading" secondItem="BbX-YJ-kXS" secondAttribute="leadingMargin" constant="-20" id="tto-IE-i01"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kKE-qu-vLA"/>
                 </viewController>

@@ -26,6 +26,7 @@
 		2435A0491BE9835000A64963 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2435A0481BE9835000A64963 /* UserController.swift */; };
 		2466700B1BEAB4DB00249890 /* PostController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246670091BEAB4DB00249890 /* PostController copy.swift */; };
 		2466700C1BEAB4DB00249890 /* ImageController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466700A1BEAB4DB00249890 /* ImageController copy.swift */; };
+		248D02741BEF083B0079D49C /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248D02731BEF083B0079D49C /* ProfileHeaderCollectionReusableView.swift */; };
 		248D07611BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		2435A0481BE9835000A64963 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		246670091BEAB4DB00249890 /* PostController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PostController copy.swift"; sourceTree = "<group>"; };
 		2466700A1BEAB4DB00249890 /* ImageController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageController copy.swift"; sourceTree = "<group>"; };
+		248D02731BEF083B0079D49C /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderCollectionReusableView.swift; path = ../ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +89,7 @@
 				2410E3301BE95EFD00EF9868 /* AppDelegate.swift */,
 				2410E3341BE95EFD00EF9868 /* Main.storyboard */,
 				2466700E1BEAB51800249890 /* Models */,
-				2466700D1BEAB50300249890 /* ViewControllers */,
+				2466700D1BEAB50300249890 /* Views */,
 				2466700F1BEAB53200249890 /* Controllers */,
 				2410E3371BE95EFD00EF9868 /* Assets.xcassets */,
 				2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */,
@@ -96,7 +98,7 @@
 			path = Timeline;
 			sourceTree = "<group>";
 		};
-		2466700D1BEAB50300249890 /* ViewControllers */ = {
+		2466700D1BEAB50300249890 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */,
@@ -108,8 +110,9 @@
 				2435A0361BE9685A00A64963 /* UserSearchTableViewController.swift */,
 				2410E3441BE965D900EF9868 /* PostDetailTableViewController.swift */,
 				2410E3421BE9647B00EF9868 /* TimelineTableViewController.swift */,
+				248D02731BEF083B0079D49C /* ProfileHeaderCollectionReusableView.swift */,
 			);
-			name = ViewControllers;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		2466700E1BEAB51800249890 /* Models */ = {
@@ -219,6 +222,7 @@
 				2435A03D1BE96D6F00A64963 /* LoginSignupPickerViewController.swift in Sources */,
 				2435A0451BE97B6B00A64963 /* Comment.swift in Sources */,
 				2410E3451BE965D900EF9868 /* PostDetailTableViewController.swift in Sources */,
+				248D02741BEF083B0079D49C /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				2410E3311BE95EFD00EF9868 /* AppDelegate.swift in Sources */,
 				2435A0411BE96F0F00A64963 /* User.swift in Sources */,
 				2435A03B1BE96B8200A64963 /* AddPhotoTableViewController.swift in Sources */,
