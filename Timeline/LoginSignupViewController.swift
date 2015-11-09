@@ -26,6 +26,13 @@ class LoginSignupViewController: UIViewController {
     var user: User?
     var viewMode = ViewMode.Signup
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateViewBasedOnMode()
+        
+    }
+    
     //MARK: Bug
     func updateViewBasedOnMode() {
         switch viewMode {
@@ -40,6 +47,16 @@ class LoginSignupViewController: UIViewController {
             
         case .Edit:
             actionButton.setTitle("Update", forState: .Normal)
+            
+            emailTextField.removeFromSuperview()
+            passwordTextField.removeFromSuperview()
+            
+            if let user = self.user {
+                
+                usernameTextField.text = user.username
+                bioTextField.text = user.bio
+                urlTextField.text = user.url
+            }
         }
     }
     
@@ -57,12 +74,12 @@ class LoginSignupViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        updateViewBasedOnMode()
-
+    func updateWithUser(user: User) {
+        self.user = user
+        viewMode = .Edit
     }
+    
+    
 
     @IBAction func actionButtonTapped(sender: UIButton) {
         

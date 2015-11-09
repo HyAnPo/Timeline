@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7GM-Am-cW4" id="M7T-Fu-3My">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TsL-Ba-sYX" id="fFY-dx-L6d">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -93,13 +93,13 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rvx-zJ-7mh" id="tsF-UJ-Ptp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="gIT-Eh-7BM" kind="show" id="Dm6-BM-ad8"/>
+                                    <segue destination="PRi-2q-g7V" kind="show" id="ePo-uh-X7q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -146,7 +146,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15v-1f-b8m" id="HUi-q4-mRI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -178,6 +178,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="REM-c0-URe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ulV-ch-Lph">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="112"/>
@@ -280,9 +281,16 @@
                             <constraint firstItem="REM-c0-URe" firstAttribute="leading" secondItem="BbX-YJ-kXS" secondAttribute="leadingMargin" constant="-20" id="tto-IE-i01"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kKE-qu-vLA"/>
+                    <navigationItem key="navigationItem" id="kKE-qu-vLA">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="edit" id="uhE-Oc-afT">
+                            <connections>
+                                <segue destination="iAA-6J-eOx" kind="presentation" identifier="toEditProfile" id="Ge0-Jc-5Nf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="REM-c0-URe" id="ilZ-A1-odC"/>
+                        <outlet property="editBarButtonItem" destination="uhE-Oc-afT" id="Vr6-lU-P8O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjY-fC-c2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,7 +311,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DXv-Sf-zC9" id="9Z3-Cu-i14">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -616,10 +624,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cra-Kx-5nC"/>
         <segue reference="gez-2b-PNm"/>
+        <segue reference="ePo-uh-X7q"/>
         <segue reference="fLv-eU-qoV"/>
-        <segue reference="YgS-mE-nfS"/>
+        <segue reference="Ge0-Jc-5Nf"/>
         <segue reference="gXO-QJ-shg"/>
     </inferredMetricsTieBreakers>
 </document>

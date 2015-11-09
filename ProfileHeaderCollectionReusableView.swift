@@ -38,6 +38,7 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
         
         if user == UserController.sharedController.currentUser {
             followUserButton.setTitle("Logout", forState: .Normal)
+            followUserButton.tintColor = UIColor.redColor()
         } else {
             UserController.userFollowsUser(UserController.sharedController.currentUser, userCheck: user, completion: { (follows) -> Void in
                 if follows {

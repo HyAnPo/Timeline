@@ -59,8 +59,12 @@ class UserController {
         let user1 = User(userName: "Andrew", bio: "Fun", url: "www.porter.com", identifier: "iOS")
         let user2 = User(userName: "Libby", bio: "Craft", url: "www.libby.com", identifier: "School")
         let user3 = User(userName: "Hyrum", bio: "Volleyball", url: "www.hyrum.com", identifier: "Work")
+        let user4 = User(userName: "hansolo", identifier: "1233")
+        let user5 = User(userName: "ob1kenob", identifier: "08098324")
+        let user6 = User(userName: "3p0", identifier: "23408")
+        let user7 = User(userName: "leia", bio: "Princess", url: "myspace.com", identifier: "2093")
         
-        return [user1, user2, user3]
+        return [user1, user2, user3, user4, user5, user6, user7]
     }
     
     
