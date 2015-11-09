@@ -19,9 +19,11 @@ class LoginSignupViewController: UIViewController {
     enum ViewMode {
         case Login
         case Signup
+        case Edit
         
     }
     
+    var user: User?
     var viewMode = ViewMode.Signup
     
     //MARK: Bug
@@ -36,6 +38,8 @@ class LoginSignupViewController: UIViewController {
         case .Signup:
             actionButton.setTitle("Sign Up", forState: .Normal)
             
+        case .Edit:
+            actionButton.setTitle("Update", forState: .Normal)
         }
     }
     
@@ -46,7 +50,8 @@ class LoginSignupViewController: UIViewController {
                 return !(usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
             case .Signup:
                 return !(emailTextField.text!.isEmpty || usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
-                
+            case .Edit:
+                return !(usernameTextField.text!.isEmpty)
             }
             
         }
@@ -79,7 +84,19 @@ class LoginSignupViewController: UIViewController {
                         self.presentValidationAlertWithTitle("Unable to Signup", message: "Check your information and try again.")
                     }
                 })
+            case .Edit:
+                UserController.updateUser(self.user!, userName: self.usernameTextField.text!, bio: self.bioTextField.text, url: self.urlTextField.text, completion: { (success, user) -> Void in
+                    
+                    if success {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        self.presentValidationAlertWithTitle("Unable to Update User", message: "Please check your information and try again.")
+                    }
+                })
+                
             }
+        } else {
+            presentValidationAlertWithTitle("Missing Information", message: "Please check your information and try again.")
         }
     }
     

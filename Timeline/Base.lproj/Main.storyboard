@@ -99,7 +99,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="PRi-2q-g7V" kind="show" identifier="toProfileView" id="y48-GB-mrT"/>
+                                    <segue destination="gIT-Eh-7BM" kind="show" id="Dm6-BM-ad8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -209,6 +209,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="TlX-os-yqe" id="zTf-Su-8eQ"/>
+                                            <segue destination="h3c-00-4WM" kind="show" id="fLv-eU-qoV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -526,9 +527,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="eVW-xw-QMo" kind="presentation" identifier="noCurrentUserSegue" id="gez-2b-PNm"/>
-                        <segue destination="gIT-Eh-7BM" kind="relationship" relationship="viewControllers" id="2hI-8e-snR"/>
                         <segue destination="zxD-jq-CmS" kind="relationship" relationship="viewControllers" id="THU-eL-hXa"/>
                         <segue destination="PhP-Lx-tBr" kind="relationship" relationship="viewControllers" id="9iJ-7m-vzn"/>
+                        <segue destination="gIT-Eh-7BM" kind="relationship" relationship="viewControllers" id="cra-Kx-5nC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAA-Vy-UCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,12 +569,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="PRi-2q-g7V" kind="relationship" relationship="rootViewController" id="GMP-5h-6Pn"/>
+                        <segue destination="PRi-2q-g7V" kind="relationship" relationship="rootViewController" id="YrL-G8-g7Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbS-2b-IVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="1354"/>
+            <point key="canvasLocation" x="1788" y="1378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GK0-X6-Csr">
@@ -615,9 +616,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cra-Kx-5nC"/>
         <segue reference="gez-2b-PNm"/>
+        <segue reference="fLv-eU-qoV"/>
         <segue reference="YgS-mE-nfS"/>
         <segue reference="gXO-QJ-shg"/>
-        <segue reference="y48-GB-mrT"/>
     </inferredMetricsTieBreakers>
 </document>

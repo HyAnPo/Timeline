@@ -18,8 +18,13 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if user == nil {
+            user = UserController.sharedController.currentUser
+        }
+        
         print(user)
-
+        updateBasedOnUser()
     }
     
     func updateBasedOnUser() {
