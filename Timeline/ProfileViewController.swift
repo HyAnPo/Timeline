@@ -122,6 +122,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         }
     }
     
+    // MARK: - Navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toEditProfile" {
             let destinationViewController = segue.destinationViewController as? LoginSignupViewController
@@ -129,8 +131,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             _ = destinationViewController?.view
             
             destinationViewController?.updateWithUser(user!)
+        } else if segue.identifier == "profileToPostDetail" {
+            if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPathForCell(cell) {
+                
+                let post = userPosts[indexPath.row]
+                
+                let destinationViewController = segue.destinationViewController as? PostDetailTableViewController
+                
+                destinationViewController?.post = post
+            }
         }
     }
+    
+    
 
 }
 

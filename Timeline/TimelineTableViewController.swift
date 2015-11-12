@@ -70,6 +70,21 @@ class TimelineTableViewController: UITableViewController {
 
         return cell
     }
+    
+    // MARK: - Navigation 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "timelineToPostDetail" {
+            if let cell = sender as? UITableViewCell, let indexpath = tableView.indexPathForCell(cell) {
+                
+                let post = posts[indexpath.row]
+                
+                let destinationViewController = segue.destinationViewController as? PostDetailTableViewController
+                
+                destinationViewController?.post = post
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

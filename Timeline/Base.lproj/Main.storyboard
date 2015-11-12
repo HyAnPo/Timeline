@@ -70,7 +70,7 @@
                                     <outlet property="commentsLabel" destination="WkG-3k-T4M" id="FrL-vi-k30"/>
                                     <outlet property="likesLabel" destination="IkA-Ds-8WX" id="vjC-H7-CRc"/>
                                     <outlet property="postImageView" destination="mz3-rM-Vn8" id="rjJ-hH-SKp"/>
-                                    <segue destination="h3c-00-4WM" kind="show" id="Gn5-26-Sxr"/>
+                                    <segue destination="h3c-00-4WM" kind="show" identifier="timelineToPostDetail" id="Gn5-26-Sxr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -261,7 +261,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="TlX-os-yqe" id="zTf-Su-8eQ"/>
-                                            <segue destination="h3c-00-4WM" kind="show" id="fLv-eU-qoV"/>
+                                            <segue destination="h3c-00-4WM" kind="show" identifier="profileToPostDetail" id="fLv-eU-qoV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -777,7 +777,7 @@
         <segue reference="gXO-QJ-shg"/>
         <segue reference="gez-2b-PNm"/>
         <segue reference="ePo-uh-X7q"/>
-        <segue reference="fLv-eU-qoV"/>
         <segue reference="Ge0-Jc-5Nf"/>
+        <segue reference="Gn5-26-Sxr"/>
     </inferredMetricsTieBreakers>
 </document>
