@@ -14,6 +14,7 @@ class TimelineTableViewController: UITableViewController {
         loadTimelineForUser(UserController.sharedController.currentUser)
     }
     
+    
     var posts: [Post] = []
 
     override func viewDidLoad() {
