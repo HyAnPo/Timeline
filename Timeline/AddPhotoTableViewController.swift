@@ -54,6 +54,26 @@ class AddPhotoTableViewController: UITableViewController, UINavigationController
     
     @IBAction func submitButtonTapped(sender: AnyObject) {
         
+        self.view.window?.endEditing(true)
+        if let image = image {
+            
+            // POST IMAGE
+            
+            PostController.addPost(image, caption: caption, completion: { (post) -> Void in
+                if post != nil {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    let failedAlert = UIAlertController(title: "Failed!", message: "Image failed to post. Please try again.", preferredStyle: .Alert)
+                    failedAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(failedAlert, animated: true, completion: nil)
+                }
+            })
+        }
+    }
+    
+    @IBAction func cancelButtonTapped(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     
