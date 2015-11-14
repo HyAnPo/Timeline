@@ -81,7 +81,7 @@
 		2451BFB81BF595E200D2E444 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		2451BFBA1BF595ED00D2E444 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		2451BFBC1BF5962E00D2E444 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		2451BFBE1BF596EF00D2E444 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		2451BFBE1BF596EF00D2E444 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseController.swift; path = ../FirebaseController.swift; sourceTree = "<group>"; };
 		246670091BEAB4DB00249890 /* PostController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PostController copy.swift"; sourceTree = "<group>"; };
 		2466700A1BEAB4DB00249890 /* ImageController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageController copy.swift"; sourceTree = "<group>"; };
 		248D02731BEF083B0079D49C /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderCollectionReusableView.swift; path = ../ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -111,7 +111,6 @@
 		2410E3241BE95EFD00EF9868 = {
 			isa = PBXGroup;
 			children = (
-				2451BFBE1BF596EF00D2E444 /* FirebaseController.swift */,
 				2451BFAE1BF5952100D2E444 /* Frameworks */,
 				2410E32F1BE95EFD00EF9868 /* Timeline */,
 				2410E32E1BE95EFD00EF9868 /* Products */,
@@ -192,6 +191,7 @@
 				2435A0481BE9835000A64963 /* UserController.swift */,
 				246670091BEAB4DB00249890 /* PostController copy.swift */,
 				2466700A1BEAB4DB00249890 /* ImageController copy.swift */,
+				2451BFBE1BF596EF00D2E444 /* FirebaseController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
