@@ -28,7 +28,7 @@ class PostDetailTableViewController: UITableViewController {
         commentsLabel.text = "\(post.comments.count)💭"
         likesLabel.text = "\(post.likes.count)👍🏼"
         
-        ImageController.imageForIdentifier(post.imageEndPoint) { (image) -> Void in
+        ImageController.imageForIdentifier(post.imageEndpoint) { (image) -> Void in
             self.headerImageView.image = image
         }
         

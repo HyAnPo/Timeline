@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Like: FirebaseType {
+struct Like: Equatable, FirebaseType {
     
     private let kPost = "post"
     private let kUsername = "username"
