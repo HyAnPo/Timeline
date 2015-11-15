@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2410E3311BE95EFD00EF9868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410E3301BE95EFD00EF9868 /* AppDelegate.swift */; };
-		2410E3331BE95EFD00EF9868 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2410E3321BE95EFD00EF9868 /* ViewController.swift */; };
 		2410E3361BE95EFD00EF9868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2410E3341BE95EFD00EF9868 /* Main.storyboard */; };
 		2410E3381BE95EFD00EF9868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2410E3371BE95EFD00EF9868 /* Assets.xcassets */; };
 		2410E33B1BE95EFD00EF9868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */; };
@@ -58,7 +57,6 @@
 /* Begin PBXFileReference section */
 		2410E32D1BE95EFD00EF9868 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2410E3301BE95EFD00EF9868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2410E3321BE95EFD00EF9868 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2410E3351BE95EFD00EF9868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2410E3371BE95EFD00EF9868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2410E33A1BE95EFD00EF9868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 				2490EB861BF16416000DF084 /* PostTableViewCell.swift */,
 				24AFFA161BF3EB8700C186FC /* PostCommentTableViewCell.swift */,
 				248D07601BEC444B00D81AC0 /* UserSearchResultsTableViewController.swift */,
-				2410E3321BE95EFD00EF9868 /* ViewController.swift */,
 				2435A0381BE96A0100A64963 /* ProfileViewController.swift */,
 				2435A03E1BE96E6B00A64963 /* LoginSignupViewController.swift */,
 				2435A03C1BE96D6F00A64963 /* LoginSignupPickerViewController.swift */,
@@ -273,7 +270,6 @@
 				2435A0391BE96A0100A64963 /* ProfileViewController.swift in Sources */,
 				2435A0431BE9766A00A64963 /* Post.swift in Sources */,
 				2435A0371BE9685A00A64963 /* UserSearchTableViewController.swift in Sources */,
-				2410E3331BE95EFD00EF9868 /* ViewController.swift in Sources */,
 				2435A0491BE9835000A64963 /* UserController.swift in Sources */,
 				2435A0471BE97CCB00A64963 /* Like.swift in Sources */,
 				2490EB871BF16416000DF084 /* PostTableViewCell.swift in Sources */,
