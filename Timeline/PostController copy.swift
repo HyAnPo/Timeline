@@ -57,16 +57,16 @@ class PostController {
         
         let sampleImageIdentifier = "-K1l4125TYvKMc7rcp5e"
         
-        let like1 = Like(userName: "blaine", postIdentifier: "1234")
-        let like2 = Like(userName: "holly", postIdentifier: "4566")
-        let like3 = Like(userName: "drake", postIdentifier: "43212")
+        let like1 = Like(username: "blaine", postIdentifier: "1234")
+        let like2 = Like(username: "holly", postIdentifier: "4566")
+        let like3 = Like(username: "drake", postIdentifier: "43212")
         
-        let comment1 = Comment(userName: "taylor", text: "nice pic", postIdentifier: "1234")
-        let comment2 = Comment(userName: "blaine", text: "yeah it was a great shot", postIdentifier: "4566")
+        let comment1 = Comment(username: "taylor", text: "nice pic", postIdentifier: "1234")
+        let comment2 = Comment(username: "blaine", text: "yeah it was a great shot", postIdentifier: "4566")
         
-        let post1 = Post(imageEndPoint: sampleImageIdentifier, caption: "Love the Pic", userName: "kelsi:", comments: [comment1, comment2], likes: [like1, like2, like3])
-        let post2 = Post(imageEndPoint: sampleImageIdentifier, caption: "Great Pic", userName: "taylor", comments: [], likes: [])
-        let post3 = Post(imageEndPoint: sampleImageIdentifier, caption: "You're a professional", userName: "blaine", comments: [], likes: [])
+        let post1 = Post(imageEndPoint: sampleImageIdentifier, caption: "Love the Pic", username: "kelsi:", comments: [comment1, comment2], likes: [like1, like2, like3])
+        let post2 = Post(imageEndPoint: sampleImageIdentifier, caption: "Great Pic", username: "taylor", comments: [], likes: [])
+        let post3 = Post(imageEndPoint: sampleImageIdentifier, caption: "You're a professional", username: "blaine", comments: [], likes: [])
         
         return [post1, post2, post3]
     }

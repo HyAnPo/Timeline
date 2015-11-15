@@ -8,15 +8,25 @@
 
 import Foundation
 
-struct Like: Equatable {
+struct Like: Equatable, FirebaseType {
     
-    let userName: String
+    private let kPost = "post"
+    private let kUsername = "username"
+    
+    let username: String
     let postIdentifier: String
     let identifier: String?
+    var endpoint: String {
+        return "/post/\(self.postIdentifier)/likes/"
+    }
     
-    init(userName: String, postIdentifier: String, identifier: String? = nil) {
+    var jsonValue: [String:AnyObject] {
+        return [kUsername: username, kPost: postIdentifier]
+    }
+    
+    init(username: String, postIdentifier: String, identifier: String? = nil) {
         
-        self.userName = userName
+        self.username = username
         self.postIdentifier = postIdentifier
         self.identifier = identifier
     }
@@ -24,5 +34,5 @@ struct Like: Equatable {
 
 func == (lhs: Like, rhs: Like) -> Bool {
     
-    return (lhs.userName == rhs.userName) && (lhs.identifier == rhs.identifier)
+    return (lhs.username == rhs.username) && (lhs.identifier == rhs.identifier)
 }

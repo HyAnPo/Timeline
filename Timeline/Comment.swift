@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Comment: Equatable {
+struct Comment: Equatable, FirebaseType {
     
-    let userName: String
+    let username: String
     let text: String
     let postIdentifier: String
     let identifier: String?
     
-    init(userName: String, text: String, postIdentifier: String, identifier: String? = nil) {
+    init(username: String, text: String, postIdentifier: String, identifier: String? = nil) {
         
-        self.userName = userName
+        self.username = username
         self.text = text
         self.postIdentifier = postIdentifier
         self.identifier = identifier
@@ -26,5 +26,5 @@ struct Comment: Equatable {
 
 func == (lhs: Comment, rhs: Comment) -> Bool {
     
-    return (lhs.userName == rhs.userName) && (lhs.identifier == rhs.identifier)
+    return (lhs.username == rhs.username) && (lhs.identifier == rhs.identifier)
 }

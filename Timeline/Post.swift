@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct Post: Equatable {
+struct Post: Equatable, FirebaseType {
     
     let imageEndPoint: String
     let caption: String?
-    let userName: String
+    let username: String
     let comments: [Comment]
     let likes: [Like]
     let identifier: String?
     
-    init(imageEndPoint: String, caption: String? = nil, userName: String, comments: [Comment] = [], likes: [Like] = [], identifier: String? = nil) {
+    init(imageEndPoint: String, caption: String? = nil, username: String, comments: [Comment] = [], likes: [Like] = [], identifier: String? = nil) {
         
         self.imageEndPoint = imageEndPoint
         self.caption = caption
-        self.userName = userName
+        self.username = username
         self.comments = comments
         self.likes = likes
         self.identifier = identifier
@@ -30,5 +30,5 @@ struct Post: Equatable {
 
 func ==(lhs: Post, rhs: Post) -> Bool {
     
-    return (lhs.userName == rhs.userName) && (lhs.identifier == rhs.identifier)
+    return (lhs.username == rhs.username) && (lhs.identifier == rhs.identifier)
 }

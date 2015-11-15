@@ -88,7 +88,7 @@ class PostDetailTableViewController: UITableViewController {
         let comment = post?.comments[indexPath.row]
         
         if let comment = comment {
-            cell.textLabel?.text = comment.userName
+            cell.textLabel?.text = comment.username
             cell.detailTextLabel?.text = comment.text
             
         }

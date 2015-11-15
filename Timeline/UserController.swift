@@ -42,11 +42,11 @@ class UserController {
         completion(success: true, user: mockUsers().first)
     }
     
-    static func createUser(email: String, userName: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
+    static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         completion(success: true, user: mockUsers().first)
     }
     
-    static func updateUser(user: User, userName: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
+    static func updateUser(user: User, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         completion(success: true, user: mockUsers().first)
     }
     
@@ -56,13 +56,13 @@ class UserController {
     
     static func mockUsers() -> [User] {
         
-        let user1 = User(userName: "Andrew", bio: "Fun", url: "www.porter.com", identifier: "iOS")
-        let user2 = User(userName: "Libby", bio: "Craft", url: "www.libby.com", identifier: "School")
-        let user3 = User(userName: "Hyrum", bio: "Volleyball", url: "www.hyrum.com", identifier: "Work")
-        let user4 = User(userName: "hansolo", identifier: "1233")
-        let user5 = User(userName: "ob1kenob", identifier: "08098324")
-        let user6 = User(userName: "3p0", identifier: "23408")
-        let user7 = User(userName: "leia", bio: "Princess", url: "myspace.com", identifier: "2093")
+        let user1 = User(username: "Andrew", bio: "Fun", url: "www.porter.com", identifier: "iOS")
+        let user2 = User(username: "Libby", bio: "Craft", url: "www.libby.com", identifier: "School")
+        let user3 = User(username: "Hyrum", bio: "Volleyball", url: "www.hyrum.com", identifier: "Work")
+        let user4 = User(username: "hansolo", identifier: "1233")
+        let user5 = User(username: "ob1kenob", identifier: "08098324")
+        let user6 = User(username: "3p0", identifier: "23408")
+        let user7 = User(username: "leia", bio: "Princess", url: "myspace.com", identifier: "2093")
         
         return [user1, user2, user3, user4, user5, user6, user7]
     }

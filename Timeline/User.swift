@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct User: Equatable {
+struct User: Equatable, FirebaseType {
     let username: String
     let bio: String?
     let url: String?
     let identifier: String?
     
-    init(userName: String, bio: String? = nil, url: String? = nil, identifier: String) {
+    init(username: String, bio: String? = nil, url: String? = nil, identifier: String) {
         
-        self.username = userName
+        self.username = username
         self.bio = bio
         self.url = url
         self.identifier = identifier

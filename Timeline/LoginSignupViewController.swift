@@ -94,7 +94,7 @@ class LoginSignupViewController: UIViewController {
                     }
                 })
             case .Signup:
-                UserController.createUser(emailTextField.text!, userName: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
+                UserController.createUser(emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) -> Void in
                     if success, let _ = user {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
@@ -102,7 +102,7 @@ class LoginSignupViewController: UIViewController {
                     }
                 })
             case .Edit:
-                UserController.updateUser(self.user!, userName: self.usernameTextField.text!, bio: self.bioTextField.text, url: self.urlTextField.text, completion: { (success, user) -> Void in
+                UserController.updateUser(self.user!, username: self.usernameTextField.text!, bio: self.bioTextField.text, url: self.urlTextField.text, completion: { (success, user) -> Void in
                     
                     if success {
                         self.dismissViewControllerAnimated(true, completion: nil)
