@@ -18,6 +18,10 @@
 		24A679081C9CE61000ACADF5 /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A679071C9CE61000ACADF5 /* AddPhotoTableViewController.swift */; };
 		24A6790A1C9D093800ACADF5 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A679091C9D093700ACADF5 /* LoginSignupViewController.swift */; };
 		24A6790C1C9D0C3300ACADF5 /* LoginSignupChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A6790B1C9D0C3300ACADF5 /* LoginSignupChoiceViewController.swift */; };
+		24A6790E1C9D0DD300ACADF5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A6790D1C9D0DD300ACADF5 /* User.swift */; };
+		24A679101C9D0FAB00ACADF5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A6790F1C9D0FAB00ACADF5 /* Comment.swift */; };
+		24A679131C9D108900ACADF5 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A679121C9D108900ACADF5 /* Like.swift */; };
+		24A679151C9D115F00ACADF5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A679141C9D115F00ACADF5 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		24A679071C9CE61000ACADF5 /* AddPhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewController.swift; sourceTree = "<group>"; };
 		24A679091C9D093700ACADF5 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		24A6790B1C9D0C3300ACADF5 /* LoginSignupChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupChoiceViewController.swift; sourceTree = "<group>"; };
+		24A6790D1C9D0DD300ACADF5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		24A6790F1C9D0FAB00ACADF5 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		24A679121C9D108900ACADF5 /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		24A679141C9D115F00ACADF5 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 			children = (
 				2410E3341BE95EFD00EF9868 /* Main.storyboard */,
 				2410E3301BE95EFD00EF9868 /* AppDelegate.swift */,
+				24A679111C9D0FB200ACADF5 /* Models */,
 				24A679021C9CDA2100ACADF5 /* View Controllers */,
 				2410E3371BE95EFD00EF9868 /* Assets.xcassets */,
 				2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */,
@@ -88,6 +97,17 @@
 				24A678FE1C9CD8C600ACADF5 /* TimelineTableViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		24A679111C9D0FB200ACADF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24A6790D1C9D0DD300ACADF5 /* User.swift */,
+				24A6790F1C9D0FAB00ACADF5 /* Comment.swift */,
+				24A679121C9D108900ACADF5 /* Like.swift */,
+				24A679141C9D115F00ACADF5 /* Post.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +184,13 @@
 				24A679081C9CE61000ACADF5 /* AddPhotoTableViewController.swift in Sources */,
 				24A6790C1C9D0C3300ACADF5 /* LoginSignupChoiceViewController.swift in Sources */,
 				24A678FF1C9CD8C600ACADF5 /* TimelineTableViewController.swift in Sources */,
+				24A679151C9D115F00ACADF5 /* Post.swift in Sources */,
 				24A6790A1C9D093800ACADF5 /* LoginSignupViewController.swift in Sources */,
 				2410E3311BE95EFD00EF9868 /* AppDelegate.swift in Sources */,
+				24A679101C9D0FAB00ACADF5 /* Comment.swift in Sources */,
+				24A6790E1C9D0DD300ACADF5 /* User.swift in Sources */,
 				24A679061C9CE35D00ACADF5 /* ProfileViewController.swift in Sources */,
+				24A679131C9D108900ACADF5 /* Like.swift in Sources */,
 				24A679041C9CE03600ACADF5 /* UserSearchTableViewController.swift in Sources */,
 				24A679011C9CDA1000ACADF5 /* PostDetailTableViewController.swift in Sources */,
 			);
