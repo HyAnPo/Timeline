@@ -15,7 +15,7 @@ struct User: Equatable {
     var url: String?
     let uid: String?
     
-    init(username: String, bio: String? = nil, url: String? = nil, uid: String?) {
+    init(username: String, uid: String?, bio: String? = nil, url: String? = nil) {
         self.username = username
         self.bio = bio
         self.url = url
