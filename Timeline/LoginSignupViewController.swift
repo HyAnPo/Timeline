@@ -40,10 +40,6 @@ class LoginSignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViewBasedOnMode(mode)
-        
-        if !fieldsAreValid {
-            actionButton.enabled = false
-        }
     }
 
     

@@ -20,9 +20,9 @@ class TimelineTableViewController: UITableViewController {
         if let currentUser = UserController.sharedController.currentUser {
             if posts.count > 0 {
                 loadPostsForUser(currentUser)
-            } else {
-                tabBarController?.performSegueWithIdentifier("toLoginSignup", sender: nil)
             }
+        } else {
+            tabBarController?.performSegueWithIdentifier("toLoginSignup", sender: nil)
         }
     }
     

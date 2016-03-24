@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="b2T-M1-3DZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="b2T-M1-3DZ">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b2T-M1-3DZ" id="JXF-JT-Rb0">
@@ -100,9 +100,15 @@
                                 <segment title="Friends"/>
                                 <segment title="Add Friends"/>
                             </segments>
+                            <connections>
+                                <action selector="selectedIndexChanged:" destination="5wc-55-pOU" eventType="valueChanged" id="g2l-Ld-Pac"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="p0a-y2-xSH" id="fXk-xh-9dq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywR-sW-EsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,7 +467,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uQz-aT-GH3"/>
+        <segue reference="97c-vU-Mib"/>
         <segue reference="6gM-R4-MJn"/>
     </inferredMetricsTieBreakers>
 </document>
