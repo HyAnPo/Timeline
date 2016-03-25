@@ -17,10 +17,127 @@
                     <view key="view" contentMode="scaleToFill" id="BtJ-eJ-pJi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VVF-Mf-HDR">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="480"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RCK-AO-zXy">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="129"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="Id9-jR-eEI" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Pw-iY-mQO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="1Pw-iY-mQO" secondAttribute="bottom" id="Hue-vn-gwQ"/>
+                                            <constraint firstItem="1Pw-iY-mQO" firstAttribute="top" secondItem="Id9-jR-eEI" secondAttribute="top" id="JCM-Um-VdT"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Pw-iY-mQO" secondAttribute="trailing" id="ZLw-4W-Gye"/>
+                                            <constraint firstItem="1Pw-iY-mQO" firstAttribute="leading" secondItem="Id9-jR-eEI" secondAttribute="leading" id="ehq-lg-Ou8"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="sT1-Ti-4OW" kind="show" identifier="toPostDetail" id="ZdF-LE-MJx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerReusableView" id="4DB-Kr-kBV" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="328" height="129"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ica-ur-WBd">
+                                            <rect key="frame" x="8" y="8" width="312" height="113"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzA-fU-Dgp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="pXs-SX-Lce"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-tM-fyc">
+                                                    <rect key="frame" x="0.0" y="79" width="312" height="15"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="URL"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="urlButtonTapped" destination="4DB-Kr-kBV" eventType="touchUpInside" id="L0b-xM-9lb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukM-gc-IYb">
+                                                    <rect key="frame" x="0.0" y="98" width="312" height="15"/>
+                                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Follow"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="followActionButtonTapped" destination="4DB-Kr-kBV" eventType="touchUpInside" id="h9y-FW-vjs"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ukM-gc-IYb" firstAttribute="height" secondItem="NWF-tM-fyc" secondAttribute="height" priority="750" id="DC6-ia-5Df"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ica-ur-WBd" secondAttribute="trailing" id="6ma-Rb-jPj"/>
+                                        <constraint firstItem="ica-ur-WBd" firstAttribute="leading" secondItem="4DB-Kr-kBV" secondAttribute="leadingMargin" id="Xte-j9-jvI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ica-ur-WBd" secondAttribute="bottom" id="a5X-X3-Ohz"/>
+                                        <constraint firstItem="ica-ur-WBd" firstAttribute="top" secondItem="4DB-Kr-kBV" secondAttribute="topMargin" id="b2l-ee-fTG"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="hzA-fU-Dgp" id="15q-ai-OxN"/>
+                                        <outlet property="followButton" destination="ukM-gc-IYb" id="hzx-yj-hGm"/>
+                                        <outlet property="urlButton" destination="NWF-tM-fyc" id="onK-OJ-yye"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="xHK-9U-2Ck" id="Xnx-Yj-Xsl"/>
+                                    <outlet property="delegate" destination="xHK-9U-2Ck" id="qKV-s3-XtU"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VVF-Mf-HDR" secondAttribute="trailing" constant="-20" id="1ii-Dg-YUO"/>
+                            <constraint firstItem="VVF-Mf-HDR" firstAttribute="top" secondItem="BtJ-eJ-pJi" secondAttribute="topMargin" id="5FV-CJ-NCr"/>
+                            <constraint firstItem="VVF-Mf-HDR" firstAttribute="leading" secondItem="BtJ-eJ-pJi" secondAttribute="leadingMargin" constant="-20" id="LIc-Xt-gea"/>
+                            <constraint firstItem="VVF-Mf-HDR" firstAttribute="bottom" secondItem="BtJ-eJ-pJi" secondAttribute="bottomMargin" id="a9C-2t-cpc"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HiZ-oE-1i6"/>
+                    <navigationItem key="navigationItem" id="HiZ-oE-1i6">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="edit" id="fMh-b5-WIU">
+                            <connections>
+                                <segue destination="7PX-Un-CJR" kind="presentation" identifier="toEditProfile" id="xHi-tV-o3v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="editBarButtonItem" destination="fMh-b5-WIU" id="uBf-tG-3La"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz0-KU-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -496,7 +613,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="97c-vU-Mib"/>
-        <segue reference="6gM-R4-MJn"/>
+        <segue reference="Kb4-Xa-2YA"/>
+        <segue reference="ZdF-LE-MJx"/>
+        <segue reference="xHi-tV-o3v"/>
     </inferredMetricsTieBreakers>
 </document>

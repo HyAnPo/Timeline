@@ -14,6 +14,7 @@ class LoginSignupViewController: UIViewController {
     enum ViewMode {
         case Login
         case Signup
+        case Edit
     }
     
     // MARK: - Outlets
@@ -25,30 +26,36 @@ class LoginSignupViewController: UIViewController {
     @IBOutlet var actionButton: UIButton!
     
     // MARK: - Properties
-    var mode: ViewMode = .Signup
+    var viewMode: ViewMode = .Signup
     var fieldsAreValid: Bool {
         get {
-            switch mode {
+            switch viewMode {
             case .Signup:
                 return !(usernameTextField.text!.isEmpty || emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
             case .Login:
                 return !(usernameTextField.text!.isEmpty || passwordTextField.text!.isEmpty)
+            case .Edit:
+                return !(usernameTextField.text!.isEmpty)
             }
         }
     }
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViewBasedOnMode(mode)
+        updateViewBasedOnMode(viewMode)
+        
+        if let user = user {
+            updateWithUser(user)
+        }
     }
-
     
     
     // MARK: - Buttons
     @IBAction func actionButtonTapped(sender: UIButton) {
         
         if fieldsAreValid {
-            switch mode {
+            switch viewMode {
             case .Signup:
                 UserController.createUser(emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) in
                     if success, let _ = user {
@@ -65,6 +72,16 @@ class LoginSignupViewController: UIViewController {
                         self.presentValidationAlertWithTitle("Oh Crap!", message: "Failed to login, check email and password.")
                     }
                 })
+            case .Edit:
+                if let user = user {
+                    UserController.updateUser(user, username: usernameTextField.text!, bio: bioTextField.text, url: urlTextField.text, completion: { (success, user) in
+                        if success {
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        } else {
+                            self.presentValidationAlertWithTitle("Failed to Update User", message: "Please check your information and try again.")
+                        }
+                    })
+                }
             }
         }
     }
@@ -79,7 +96,16 @@ class LoginSignupViewController: UIViewController {
             bioTextField.hidden = true
             urlTextField.hidden = true
             actionButton.setTitle("Login", forState: .Normal)
+        case .Edit:
+            emailTextField.hidden = true
+            passwordTextField.hidden = true
+            actionButton.setTitle("Save", forState: .Normal)
         }
+    }
+    
+    func updateWithUser(user: User) {
+        self.user = user
+        viewMode = .Edit
     }
     
     func presentValidationAlertWithTitle(title: String, message: String) {
