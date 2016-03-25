@@ -9,8 +9,12 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    // MARK: - Properties
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(user)
     }
 }
