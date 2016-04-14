@@ -9,6 +9,13 @@
 import UIKit
 
 class AddPhotoTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
+    
+    // MARK: - Outlets
+    @IBOutlet var captionTextField: UITextField!
+    @IBOutlet var postButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

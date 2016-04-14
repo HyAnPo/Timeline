@@ -64,7 +64,7 @@ class TimelineTableViewController: UITableViewController {
                 let post = posts[indexPath.row]
                 destinationView.post = post
             }
-        }
+        } 
     }
 
 }

@@ -93,6 +93,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
                 destinationViewController.user = user
                 destinationViewController.viewMode = LoginSignupViewController.ViewMode.Edit
             }
+        } else if segue.identifier == "toPostDetail" {
+            if let cell = sender as? UICollectionViewCell, indexPath = collectionView.indexPathForCell(cell), destinationView = segue.destinationViewController as? PostDetailTableViewController {
+                let post = userPosts[indexPath.item]
+                destinationView.post = post
+            }
         }
     }
 }
