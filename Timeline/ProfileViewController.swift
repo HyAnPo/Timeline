@@ -36,10 +36,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        UserController.userForIdentifier(user!.uid!) { (user) in
-            self.user = user
-            self.updateBasedOnUser()
-        }
+//        UserController.userForIdentifier(user!.uid!) { (user) in
+//            self.user = user
+//            self.updateBasedOnUser()
+//        }
     }
     
     func updateBasedOnUser() {
@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource {
             }
             
             dispatch_async(dispatch_get_main_queue(), { 
-                self.collectionView.reloadData()
+                //self.collectionView.reloadData()
             })
         }
     }

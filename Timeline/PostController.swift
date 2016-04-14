@@ -40,6 +40,10 @@ class PostController {
         completion(success: true, post: mockPosts().first)
     }
     
+    static func addLikeToPost(post: Post, completion: (success: Bool, post: Post?) -> Void) {
+        completion(success: true, post: mockPosts().first)
+    }
+    
     static func deleteComment(comment: Comment, completion: (success: Bool, post: Post?) -> Void) {
         
         completion(success: true, post: mockPosts().last)
