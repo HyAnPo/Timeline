@@ -26,3 +26,8 @@ struct User: Equatable {
 func ==(lhs: User, rhs: User) -> Bool {
     return lhs.username == rhs.username && lhs.uid == rhs.uid
 }
+
+extension User: FirebaseType {
+    
+    
+}

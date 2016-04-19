@@ -29,6 +29,13 @@
 		24A679191C9D326400ACADF5 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A679181C9D326400ACADF5 /* PostController.swift */; };
 		24A6791B1C9E019E00ACADF5 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A6791A1C9E019E00ACADF5 /* ImageController.swift */; };
 		24FF958C1CA5B74C0085EF3B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF958B1CA5B74C0085EF3B /* ImageCollectionViewCell.swift */; };
+		82A272981CC06EE500A2BC1E /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A272971CC06EE500A2BC1E /* Firebase.framework */; };
+		82A2729A1CC06FA300A2BC1E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A272991CC06FA300A2BC1E /* libicucore.tbd */; };
+		82A2729C1CC06FB500A2BC1E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A2729B1CC06FB500A2BC1E /* libc++.tbd */; };
+		82A2729E1CC06FC000A2BC1E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A2729D1CC06FC000A2BC1E /* CFNetwork.framework */; };
+		82A272A01CC06FCA00A2BC1E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A2729F1CC06FCA00A2BC1E /* Security.framework */; };
+		82A272A21CC06FD300A2BC1E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A272A11CC06FD300A2BC1E /* SystemConfiguration.framework */; };
+		82A272A51CC070C800A2BC1E /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A272A41CC070C800A2BC1E /* FirebaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +63,13 @@
 		24A679181C9D326400ACADF5 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		24A6791A1C9E019E00ACADF5 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		24FF958B1CA5B74C0085EF3B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		82A272971CC06EE500A2BC1E /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		82A272991CC06FA300A2BC1E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		82A2729B1CC06FB500A2BC1E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		82A2729D1CC06FC000A2BC1E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		82A2729F1CC06FCA00A2BC1E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		82A272A11CC06FD300A2BC1E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		82A272A41CC070C800A2BC1E /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A272A21CC06FD300A2BC1E /* SystemConfiguration.framework in Frameworks */,
+				82A272A01CC06FCA00A2BC1E /* Security.framework in Frameworks */,
+				82A2729E1CC06FC000A2BC1E /* CFNetwork.framework in Frameworks */,
+				82A272981CC06EE500A2BC1E /* Firebase.framework in Frameworks */,
+				82A2729C1CC06FB500A2BC1E /* libc++.tbd in Frameworks */,
+				82A2729A1CC06FA300A2BC1E /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +113,7 @@
 				24A679021C9CDA2100ACADF5 /* View Controllers */,
 				24A6791C1C9E252D00ACADF5 /* Controllers */,
 				24A679111C9D0FB200ACADF5 /* Models */,
+				82A272A31CC06FEB00A2BC1E /* Firebase Framework */,
 				2410E3371BE95EFD00EF9868 /* Assets.xcassets */,
 				2410E3391BE95EFD00EF9868 /* LaunchScreen.storyboard */,
 				2410E33C1BE95EFD00EF9868 /* Info.plist */,
@@ -132,11 +153,26 @@
 		24A6791C1C9E252D00ACADF5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				82A272A41CC070C800A2BC1E /* FirebaseController.swift */,
 				24A679181C9D326400ACADF5 /* PostController.swift */,
 				24A6791A1C9E019E00ACADF5 /* ImageController.swift */,
 				24A679161C9D15E200ACADF5 /* UserController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		82A272A31CC06FEB00A2BC1E /* Firebase Framework */ = {
+			isa = PBXGroup;
+			children = (
+				82A272A11CC06FD300A2BC1E /* SystemConfiguration.framework */,
+				82A2729F1CC06FCA00A2BC1E /* Security.framework */,
+				82A2729D1CC06FC000A2BC1E /* CFNetwork.framework */,
+				82A2729B1CC06FB500A2BC1E /* libc++.tbd */,
+				82A272991CC06FA300A2BC1E /* libicucore.tbd */,
+				82A272971CC06EE500A2BC1E /* Firebase.framework */,
+			);
+			name = "Firebase Framework";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A272A51CC070C800A2BC1E /* FirebaseController.swift in Sources */,
 				2459B2031CA49272001AF5E4 /* SearchResultsTableViewController.swift in Sources */,
 				24A679081C9CE61000ACADF5 /* AddPhotoTableViewController.swift in Sources */,
 				24A6790C1C9D0C3300ACADF5 /* LoginSignupChoiceViewController.swift in Sources */,
@@ -339,6 +376,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevMtn.Timeline;
@@ -350,6 +391,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DevMtn.Timeline;
