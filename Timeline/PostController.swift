@@ -64,25 +64,68 @@ class PostController {
     }
     
     static func deletePost(post: Post) {
-        
+        post.delete()
     }
     
     static func addCommentWithTextToPost(commentText: String, post: Post, completion: (success: Bool, post: Post?) -> Void) {
-        
-        completion(success: true, post: mockPosts().first)
+        if let postIdentifier = post.uid {
+            var comment = Comment(username: UserController.sharedController.currentUser.username, text: commentText, postID: postIdentifier)
+            comment.save()
+            
+            PostController.postFromIdentifier(postIdentifier, completion: { (post) in
+                completion(success: true, post: post)
+            })
+        } else {
+            var post = post
+            post.save()
+            
+            if let postID = post.uid {
+                var comment = Comment(username: UserController.sharedController.currentUser.username, text: commentText, postID: postID)
+                comment.save()
+                
+                PostController.postFromIdentifier(postID, completion: { (post) in
+                    completion(success: true, post: post)
+                })
+            }
+        }
     }
     
     static func addLikeToPost(post: Post, completion: (success: Bool, post: Post?) -> Void) {
-        completion(success: true, post: mockPosts().first)
+        if let postID = post.uid {
+            var like = Like(username: UserController.sharedController.currentUser.username, postID: postID)
+            like.save()
+            
+        } else {
+            var post = post
+            post.save()
+            
+            var like = Like(username: UserController.sharedController.currentUser.username, postID: post.uid!)
+            like.save()
+        }
+        PostController.postFromIdentifier(post.uid!) { (post) in
+            completion(success: true, post: post)
+        }
     }
     
     static func deleteComment(comment: Comment, completion: (success: Bool, post: Post?) -> Void) {
+        comment.delete()
         
-        completion(success: true, post: mockPosts().last)
+        PostController.postFromIdentifier(comment.postID) { (post) in
+            completion(success: true, post: post)
+        }
+    }
+    
+    static func deleteLike(like: Like, completion: (success: Bool, post: Post?) -> Void) {
+        like.delete()
+        
+        PostController.postFromIdentifier(like.postID) { (post) in
+            completion(success: true, post: post)
+        }
     }
     
     static func orderPosts(posts: [Post]) -> [Post] {
-        return []
+        
+        return posts.sort({$0.0.uid > $0.1.uid})
     }
     
     static func mockPosts() -> [Post] {
@@ -102,3 +145,34 @@ class PostController {
         return [post1, post2, post3]
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

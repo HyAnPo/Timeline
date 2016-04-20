@@ -21,7 +21,7 @@ struct Post: Equatable, FirebaseType {
     let username: String
     let comments: [Comment]
     let likes: [Like]
-    let uid: String?
+    var uid: String?
     
     var endpoint: String {
         return "posts"
