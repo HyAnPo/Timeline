@@ -10,38 +10,100 @@ import Foundation
 
 class UserController {
     
-    var currentUser: User! = UserController.mockUsers().first
+    private let kUser = "user"
+    
+    var currentUser: User! {
+        get {
+            guard let uid = FirebaseController.base.authData.uid,
+                    userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String: AnyObject] else { return nil }
+            
+            return User(json: userDictionary, identifier: uid)
+        }
+        
+        set {
+            if let newValue = newValue {
+                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            } else {
+                NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
+    }
     
     static let sharedController = UserController()
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
-        
-        completion(user: mockUsers().first)
+        FirebaseController.dataAtEndpoint("users/\(identifier)") { (data) -> Void in
+            if let data = data as? [String: AnyObject] {
+                let user = User(json: data, identifier: identifier)
+                
+                completion(user: user)
+            } else {
+                completion(user: nil)
+            }
+        }
     }
     
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         
-        completion(users: mockUsers())
+        FirebaseController.dataAtEndpoint("users") { (data) in
+            if let json = data as? [String: AnyObject] {
+                let users = json.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                
+                completion(users: users)
+            } else {
+                completion(users: [])
+            }
+        }
     }
     
     static func followUser(user: User, completion: (success: Bool) -> Void) {
+        
+        FirebaseController.base.childByAppendingPath("/users/\(sharedController.currentUser.uid)/follows/\(user.uid)").setValue(true)
         
         completion(success: true)
     }
     
     static func unfollowUser(user: User, completion: (success: Bool) -> Void) {
         
+        FirebaseController.base.childByAppendingPath("/users/\(sharedController.currentUser.uid)/follows/\(user.uid)").removeValue()
+        
         completion(success: true)
     }
     
     static func userFollowsUser(user: User, checkUser: User, completion: (follows: Bool) -> Void) {
         
-        completion(follows: true)
+        FirebaseController.dataAtEndpoint("/users/\(UserController.sharedController.currentUser)/follows/\(checkUser.uid)") { (data) in
+            
+            if let _ = data {
+                completion(follows: true)
+            } else {
+                completion(follows: false)
+            }
+        }
     }
     
     static func followedByUser(user: User, completion: (users: [User]?) -> Void) {
         
-        completion(users: [mockUsers().last!])
+        FirebaseController.dataAtEndpoint("users/\(user.uid)/follows") { (data) in
+            
+            if let jsonData = data as? [String: AnyObject] {
+                var users: [User] = []
+                
+                for userJson in jsonData {
+                    userForIdentifier(userJson.0, completion: { (user) in
+                        
+                        if let user = user {
+                            users.append(user)
+                            completion(users: users)
+                        }
+                    })
+                }
+            } else {
+                completion(users: [])
+            }
+        }
     }
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {

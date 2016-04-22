@@ -12,8 +12,41 @@ import UIKit
 class PostController {
     
     static func fetchTimelineForUser(user: User, completion: (posts: [Post]) -> Void) {
+        UserController.followedByUser(user) { (users) in
+            
+            var allPosts: [Post] = []
+            let dispatchGroup = dispatch_group_create()
+            
+            dispatch_group_enter(dispatchGroup)
+            PostController.postsForUser(UserController.sharedController.currentUser, completion: { (posts) in
+                
+                if let posts = posts {
+                    allPosts += posts
+                }
+                
+                dispatch_group_leave(dispatchGroup)
+            })
+            
+            if let users = users {
+                for user in users {
+                    dispatch_group_enter(dispatchGroup)
+                    PostController.postsForUser(user, completion: { (posts) in
+                        
+                        if let posts = posts {
+                            allPosts += posts
+                        }
+                        dispatch_group_leave(dispatchGroup)
+                    })
+                }
+            }
+            dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), { 
+                
+                let orderedPosts = PostController.orderPosts(allPosts)
+                
+                completion(posts: orderedPosts)
+            })
+        }
         
-        completion(posts: mockPosts())
     }
     
     static func addPost(image: UIImage, caption: String?, completion: (success: Bool, post: Post?) -> Void) {
