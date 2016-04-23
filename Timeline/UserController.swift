@@ -108,12 +108,38 @@ class UserController {
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
         
-        completion(success: true, user: mockUsers().first)
+        FirebaseController.base.authUser(email, password: password) { (error, response) in
+            
+            if let error = error {
+                completion(success: false, user: nil)
+                print(error.localizedDescription)
+            } else {
+                print("User ID: \(response.uid) authenticated successfully.")
+                UserController.userForIdentifier(response.uid, completion: { (user) in
+                    if let user = user {
+                        sharedController.currentUser = user
+                    }
+                    
+                    completion(success: true, user: user)
+                })
+            }
+        }
     }
     
     static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
-        completion(success: true, user: mockUsers().first)
+        FirebaseController.base.createUser(email, password: password) { (error, response) in
+            
+            if let error = error {
+                print("Error creating user")
+                print(error.localizedDescription)
+                completion(success: false, user: nil)
+            } else {
+                if let userData = response["uid"] {
+                    let user = User(json: response, identifier: response["uid"])
+                }
+            }
+        }
     }
     
     static func updateUser(user: User, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
