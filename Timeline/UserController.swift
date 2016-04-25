@@ -107,7 +107,7 @@ class UserController {
     }
     
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
-        
+    
         FirebaseController.base.authUser(email, password: password) { (error, response) in
             
             if let error = error {
@@ -128,27 +128,44 @@ class UserController {
     
     static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
-        FirebaseController.base.createUser(email, password: password) { (error, response) in
+        FirebaseController.base.createUser(email, password: password) { (error, responseDict) in
             
-            if let error = error {
-                print("Error creating user")
+            if error != nil {
+                print("There was an error creating user.")
                 print(error.localizedDescription)
                 completion(success: false, user: nil)
             } else {
-                if let userData = response["uid"] {
-                    let user = User(json: response, identifier: response["uid"])
-                }
+                let uid = responseDict["uid"] as? String
+                
+                var user = User(username: username, uid: uid, bio: bio, url: url)
+                user.save()
+                
+                UserController.authenticateUser(email, password: password, completion: { (success, user) in
+                    
+                    completion(success: true, user: user)
+                })
             }
         }
     }
     
     static func updateUser(user: User, username: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
-        completion(success: true, user: mockUsers().first)
+        var updatedUser = User(username: username, uid: user.uid, bio: bio, url: url)
+        updatedUser.save()
+        
+        UserController.userForIdentifier(user.uid!) { (user) in
+            
+            if let user = user {
+                sharedController.currentUser = user
+            } else {
+                completion(success: false, user: nil)
+            }
+        }
     }
     
     static func logoutCurrentUser() {
-        
+        FirebaseController.base.unauth()
+        sharedController.currentUser = nil
     }
     
     static func mockUsers() -> [User] {
